@@ -1,0 +1,49 @@
+<style media="screen">
+  .image_div { background-image: url(<%= @article.user_shot_url %>);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+              }
+</style>
+
+
+
+<div class="content">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+      <h1>
+        <%= @article.title %>
+      </h1>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <p class="author text-center">
+        Written by: Author of article
+      </p>
+      <p class="text-center">
+        <%= @article.created_at.strftime("%B, %d, %Y") %>
+      </p>
+      <%= image_tag(@article.user_shot_url, :class => 'article-image mx-auto d-block') %>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mx-auto d-block article-text mx-1">
+      <%= simple_format @article.description, :class => 'body-text' %>
+    </div>
+  </div>
+</div>
+
+<h4>Comments</h4>
+<hr class="border" />
+
+<% unless user_signed_in? %>
+
+<% else %>
+    <%= render 'comments/form' %>
+<% end %>
+
+<div id="comments">
+  <%= render @article.comments %>
+</div>

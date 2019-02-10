@@ -1,0 +1,11 @@
+
+<p class="text-sm text-grey-dark my-2">comment as <%= current_user.username %></p>
+
+<%= form_for([@article, @comment], remote: true) do |f| %>
+  <div class="relative">
+    <%= f.text_area :reply, class: "form-control", placeholder: "Write your comment here..." %>
+
+
+    <%= f.submit class: "btn btn-success py-2 my-3" %>
+  </div>
+<% end %>

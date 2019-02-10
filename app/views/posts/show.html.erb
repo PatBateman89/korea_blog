@@ -1,0 +1,47 @@
+<h1 class="title">
+  <%= @post.title %>
+</h1>
+
+<p class="date">
+  Post Submitted <%= @post.created_at.strftime("%B, %d, %Y")%>
+  <% if @post.user == current_user || current_user.admin %>
+  | <%= link_to 'Edit', edit_post_path(@post) %>
+  | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</p>
+
+<p class="body">
+  <%= simple_format @post.body %>
+</p>
+
+<p>
+  <%= @post.company %>
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Location:  <%= @post.location %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Company:  <%= @post.company %></</th>
+    </tr>
+    <tr>
+      <th scope="row">Start Date:  <%= @post.start_date %></</th>
+    </tr>
+    <tr>
+      <th scope="row">Working Hours:  <%= @post.working_times %></th>
+    </tr>
+    <tr>
+      <th scope="row">Wage:  <%= @post.pay %></</th>
+    </tr>
+    <tr>
+      <th scope="row">Email:  <%= @post.email %></</th>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number:  <%= @post.phone %></th>
+    </tr>
+  </tbody>
+</table>

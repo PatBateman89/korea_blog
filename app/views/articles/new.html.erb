@@ -1,0 +1,11 @@
+<% if current_user.admin %>
+  <h1>New Article</h1>
+
+  <%= render 'form', article: @article %>
+
+  <%= link_to 'Back', articles_path %>
+
+  <% else %>
+
+  <h1>You shouldn't be here....</h1>
+<% end %>
