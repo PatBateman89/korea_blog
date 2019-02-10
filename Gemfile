@@ -40,6 +40,7 @@ gem "mini_magick"
 gem 'impressionist', '~> 1.6', '>= 1.6.1'
 gem 'acts_as_votable', '~> 0.12.0'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'fog-aws'
 
 
 
