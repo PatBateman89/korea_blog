@@ -13,7 +13,7 @@
         <p class="card-text mb-auto"><%= truncate(article.description, :length => 50) %></p>
         <a href="#"><%= link_to "Continue Reading...", article %></a>
       </div>
-    <%= image_tag( article.user_shot_url, :class => "article-bg card-img-right flex-auto d-none d-lg-block", :style => "background-size: cover;") %>
+    <%= image_tag( article.user_shot_url, :class => "article-bg") %>
   </div>
 </div>
 <% end %>
