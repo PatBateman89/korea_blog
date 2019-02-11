@@ -20,23 +20,43 @@
 
   <hr>
 
-  <nav class="py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <%= link_to "Jobs", root_path, :class=> "p-2 text-muted" %></a>
-      <%= link_to "Post A Job", new_post_path, :class=> "p-2 text-muted" %></a>
-      <%= link_to "Articles", articles_path, :class=> "p-2 text-muted" %></a>
-      <%= link_to "Contact", pages_contact_path, :class=> "p-2 text-muted" %></a>
-      <%= link_to "ESL Lessons", pages_esl_lessons_path, :class=> "p-2 text-muted" %></a>
-      <% if current_user %>
-      <a> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %> </a>
-      <a><%= link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %></a>
-      <% else %>
-      <a> <%= link_to "Log In", new_user_session_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %> </a>
-      <a><%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %></a>
-      <% end %>
+  <nav class="py-1 mb-2 original">
+    <nav class="nav d-flex justify-content-between navbar-expand-lg">
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">Open</button>
+      <div class="collapse navbar-collapse justify-content-between">
+        <%= link_to "Jobs", root_path, :class=> "p-2 text-muted" %>
+        <%= link_to "Post A Job", new_post_path, :class=> "p-2 text-muted" %>
+        <%= link_to "Articles", articles_path, :class=> "p-2 text-muted" %>
+        <%= link_to "Contact", pages_contact_path, :class=> "p-2 text-muted" %>
+        <%= link_to "ESL Lessons", pages_esl_lessons_path, :class=> "p-2 text-muted" %>
+        <% if current_user %>
+        <a> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %> </a>
+        <a><%= link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %></a>
+        <% else %>
+        <a> <%= link_to "Log In", new_user_session_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %> </a>
+        <a><%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %></a>
+        <% end %>
+      </div>
     </nav>
-  </nav-scroller>
-</div>
+  </nav>
+
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">  <%= link_to "Jobs", root_path, :class=> "p-2 text-muted nav-link" %>  </li> </a>
+      <li class="nav-item">  <%= link_to "Post A Job", new_post_path, :class=> "p-2 text-muted nav-link" %>  </li>
+      <li class="nav-item">  <%= link_to "Articles", articles_path, :class=> "p-2 text-muted nav-link" %>  </li>
+      <li class="nav-item">  <%= link_to "Contact", pages_contact_path, :class=> "p-2 text-muted nav-link" %>
+      <li class="nav-item">  <%= link_to "ESL Lessons", pages_esl_lessons_path, :class=> "p-2 text-muted nav-link" %>  </li>
+        <% if current_user %>
+      <li class="nav-item">  <a> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %>   </li>
+      <li class="nav-item">  <a><%= link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %>  </li>
+        <% else %>
+      <li class="nav-item">  <a> <%= link_to "Log In", new_user_session_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %>   </li>
+      <li class="nav-item">  <a><%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-sm btn-outline-secondary m-2 px-5" %>  </li>
+      <% end %>
+    </ul>
+  </div>
 
 <div class="container">
     <%= render 'layouts/alerts' %>
