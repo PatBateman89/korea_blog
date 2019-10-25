@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem "font-awesome-rails"
 gem 'will_paginate-bootstrap4'
 gem 'carrierwave', '~> 1.0'
