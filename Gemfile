@@ -35,7 +35,7 @@ gem 'jquery-rails'
 gem 'devise', '~> 4.2'
 gem "font-awesome-rails"
 gem 'will_paginate-bootstrap4'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem "mini_magick"
 gem 'impressionist', '~> 1.6', '>= 1.6.1'
 gem 'acts_as_votable', '~> 0.12.0'
